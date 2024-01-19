@@ -1,0 +1,114 @@
+@import url(https://db.onlinewebfonts.com/c/249a3fc9a421b7d6c0a180ea2d22b388?family=Catamaran);
+@import url(https://db.onlinewebfonts.com/c/0744a43ed7aac352ec78c1404c890d72?family=Gilroy-Light);
+@import url(https://db.onlinewebfonts.com/c/6e4a9679e65cc320746c3e5d48e51f28?family=Raleway);
+
+
+@import "../utils/variables";
+
+#backtop {
+    position: fixed;
+    right: 50px;
+    bottom: -50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    font-size: 18px;
+    background-image: linear-gradient(to right, #ed8a4c 0, #ea485c 100%);
+    box-shadow: 0 3px 32px rgba(236, 117, 81, .54);
+    transition: 1s;
+    z-index: 10000;
+}
+
+#header.navbar-shrink {
+  border-bottom: 1px solid #333853;
+}
+
+#backtop a {
+    color: $white-color;
+}
+
+#backtop.backtop-show {
+    bottom: 50px;
+}
+
+body {
+    background-color: $bgd-color;
+}
+
+.header {
+    height: 90px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    background-color: $bgd-color;
+    border-bottom: 1px solid #333853;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    &__logo__link {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        p {
+            font-size: 30px;
+            color: $white-color;
+            font-weight: 300;
+            font-family: "Gilroy-Light";
+        }
+    }
+    &__list {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+    }
+    &__link {
+        color: $white-color;
+        font-size: 18px;
+        font-family: "Catamaran";
+        position: relative;
+        transition: 0.2s;
+        white-space: nowrap;
+        font-weight: 500;
+        padding-bottom: 12px;
+        position: relative;
+    }
+    &-button {
+        width: 180px;
+        border: 1px solid transparent;
+        border-radius: 5px;
+        background-color: #10cb6c;
+        line-height: 50px;
+        color: $white-color;
+        font-size: 16px;
+        font-family: "Catamaran";
+        text-align: center;
+        display: block;
+        transition: 0.4s;
+        white-space: nowrap;
+    }
+    &__link:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1.5px;
+        height: 2px;
+        background-color: $white-color;
+        opacity: 0;
+        transform-origin: right;
+        transition: all 0.5s;
+        }
+    &__link:hover:after {
+        opacity: 1;
+    }
+}
